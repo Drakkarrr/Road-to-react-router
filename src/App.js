@@ -8,6 +8,7 @@ import NotFound from "./components/NotFound";
 import Products from "./components/Products";
 import FeaturedProducts from "./components/FeaturedProducts";
 import NewProducts from "./components/NewProducts";
+import Users from "./components/Users";
 
 function App() {
   return (
@@ -18,9 +19,11 @@ function App() {
         <Route path="/order-summary" element={<OrderSummary/>} />
         <Route path="/about" element={<About/>} />
         <Route path="/products" element={<Products/> }>
+          <Route index element={<FeaturedProducts/>} />
           <Route path="featured" element={<FeaturedProducts/>} />
           <Route path="new" element={<NewProducts/>} />
         </Route>
+        <Route path="/users" element={<Users/>} />
         <Route path="*" element={<NotFound/> } />
      </Routes>
     </div>
